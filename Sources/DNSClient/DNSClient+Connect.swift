@@ -196,7 +196,7 @@ extension DNSClient {
 
         let dnsDecoder = DNSDecoder(group: group)
         
-        return NIOTSDatagramBootstrap(group: group)
+        return DatagramBootstrap(group: group)
             .channelOption(ChannelOptions.socket(SocketOptionLevel(SOL_SOCKET), SO_REUSEADDR), value: 1)
             .channelOption(ChannelOptions.socket(SocketOptionLevel(SOL_SOCKET), SO_REUSEPORT), value: 1)
             .channelInitializer { channel in
